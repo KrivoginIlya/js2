@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="products">
+        hello world
+    </div>
+    <script>
+        'use strict'
+        /*const products = {
+            '1': { id: 1, title: 'Notebook', price: 20000 },
+            '2': { id: 2, title: 'Mouse', price: 20000 },
+            '3': { id: 3, title: 'keyboard', price: 2500 },
+            '4': { id: 4, title: 'Gamepad', price: 5000 },
+        }
+        let out = `<div class='elements'>`;
+        for (let key in products) {
+            out += `<h3>${products[key]['title']}</h3>
+            <p>${products[key]['price']}</p>
+            <button class = by-btn>Add to card</button>`;
+        }
+        out += `</div>`;
+        document.querySelector(".products").innerHTML = out;*/
+
+        const products = [
+            { id: 1, title: 'Notebook', price: 20000 },
+            { id: 2, title: 'Mouse', price: 1500 },
+            { id: 3, title: 'Keyboard', price: 5000 },
+            { id: 4, title: 'Gamepad', price: 4500 },
+        ];
+
+        const renderProduct = (title, price) => {
+            return `<div class="product-item">
+                        <h3>${title}</h3>
+                        <img class="img-by" src = "https://picsum.photos/200/200?random">
+                        <p>${price}</p>
+                        <button class="by-btn">Добавитьить в корзину</button>
+                    </div>`;
+        }
+
+        const renderProducts = (list) => {
+            // const productList = list.map((item) => {
+            //     return renderProduct(item.title, item.price);
+            // });
+            let out = '';
+            list.forEach((item) => {
+                const result = renderProduct(item.title, item.price);
+                out += result;
+            })
+
+            document.querySelector('.products').innerHTML = out;
+        }
+
+        renderProducts(products);
+    </script>
+</body>
+
+</html>
